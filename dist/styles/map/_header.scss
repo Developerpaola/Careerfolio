@@ -1,4 +1,4 @@
-header{padding: 45px 0 0;}
+header{padding: 35px 0 0;}
 
 /* Primary menu */
 header .menu { list-style: none; margin: 0px;}
@@ -6,12 +6,13 @@ header .menu { list-style: none; margin: 0px;}
 header .menu li{
     display: inline-block;
     margin-right: 35px;
+    
 
-    a { color: $dark-color; font: $font-normal;  padding: 5px 0 40px; border-bottom: 5px solid transparent; display: inline-block;
-        &:hover { border-bottom: 5px solid $second-color;}
+    a { color: $black-color; font: $font-normal;  padding: 0px 0 33px; border-bottom: 5px solid transparent; display: inline-block;
+        &:hover { border-bottom: 8px solid $second-color; color: $dark-color;}
     } 
     
-    &.current-menu-item a{ border-bottom: 5px solid $second-color;}
+    &.current-menu-item a{ color: $dark-color; border-bottom: 8px solid $second-color;}
 
    
 }

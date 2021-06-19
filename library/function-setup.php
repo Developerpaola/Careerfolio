@@ -355,12 +355,15 @@ function list_companies_func($atts) {
         $args['meta_query'][] = array('key' => 'location', 'value' => $location, 'compare' => 'LIKE');
     }
     $postslist = new WP_Query( $args );
+
     if ( $postslist->have_posts() ){
+        echo  '<div class="row align-items-start">';
         while ( $postslist->have_posts() ) : $postslist->the_post(); 
 
                                 get_template_part("template-part/community/box","company");
                             
          endwhile;  
+         echo '</div>';
 
              $big = 999999999;
      echo '<nav class="pagination">'.paginate_links( array(

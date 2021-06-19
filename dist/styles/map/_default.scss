@@ -33,10 +33,10 @@ ul li::marker{ color: $blue-color; font-weight: 700; }
     background-color: $second-color; 
     color: $white-color; 
     font: $font-btn; 
-    padding: 15px 30px; 
+    padding: 10px 30px;
     text-align: center; 
     min-width: 130px;
-    border-radius: 30px;
+    border-radius: 24px;
 
     &:hover{  color: $white-color ; background-color: $third-color;  }
 }

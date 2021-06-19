@@ -21,10 +21,13 @@
         padding: 50px 0 100px;
         background-color: $dark-color;
         text-align: center;
+        max-height: 222px !important; 
+        background-image: url(http://www.careerfolio.co.uk/wp-content/uploads/2021/06/landing-banner-image-careerfolio-scaled.jpg);
         h1{ color: $white-color; font: $font-h1; margin-bottom: 15px; }
+        h2 {color:$white-color; font: $font-normal;}
         h3{ color: $white-color; max-width: 500px;  margin: 15px auto 25px !important; }
         p{ color: $white-color; font: $font-small; }
-        img{margin-bottom: 15px;}
+        img{margin-bottom: 15px;} 
 
         .content-section{
             max-width: 70%;

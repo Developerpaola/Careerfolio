@@ -1,7 +1,7 @@
 form{
     p{ font-size: 14px; line-height: 17px;}
     input[type="text"], input[type="email"], input[type="search"], input[type="password"]{
-        padding: 15px 12px;
+        padding: 7px 20px;
         background-color: $four-color;
         color: $black-color;
         font: $font-normal;
@@ -9,14 +9,14 @@ form{
         width: 100%;
     }
 
-    select{padding: 15px 12px; background-color: $four-color; font: $font-normal; border: none;  width: 100%;}
+    select{padding: 7px 12px; background-color: $four-color; font: $font-normal; border: none;  width: 100%; color:$black-color;}
 
     input[type="submit"]{
         width: 100%;
         background-color: $second-color;
         color: $white-color;
         font: $font-normal;
-        padding: 15px 12px;
+        padding: 7px 20px;
         border-radius: 15px;
         border: none;
         &:hover{
@@ -26,8 +26,11 @@ form{
     }
 
     &.search-form{
-        select{ background-color: $black-color; border-radius: 15px 0 0 15px; color: $white-color;}
-        input[type="submit"]{  background-color: $four-color; border-radius:  0 15px 15px 0; color: $black-color;}
+        select{ background-color: $black-color; border-radius: 23px 0px 0px 23px; color: $white-color; padding: 7px 20px;}
+        input[type="submit"]{  background-color: $four-color; border-radius:  0px 20px 20px 0px; color: $black-color;}
     }
 
 }
+
+
+#show-results{ padding: 95px 0 56px;}
