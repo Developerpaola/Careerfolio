@@ -1,5 +1,6 @@
 <?php 
 $post_author_id = get_post_field( 'post_author');
+
                                 $terms = get_field('industries');
                                 $termsname='';
                                 if( $terms ): 
@@ -108,10 +109,10 @@ $post_author_id = get_post_field( 'post_author');
                                         <div class="post-box-info">
                                             <div class="row">
                                                 <div class="col-5"> <a href="'.get_permalink( ).'"><div class="circle-img" style="'.$logo.'"> </div></a></div>
-                                                <div class="col-7"> <a class="black-btn" href="'.get_permalink( ).'">Connect +</a></div>
+                                                <div class="col-7"> <a class="btn-style-roundbox" href="'.get_permalink( ).'">Connect +</a></div>
                                            </div>
                                            <h3>'.get_the_title( ).'</h3>
-                                           <p>'.wp_trim_words(get_field('description'), 10) .'</p>
+                                           <p>'.wp_trim_words(get_field('description'), 5) .'</p>
                                         </div>
                                </div>
                                ';

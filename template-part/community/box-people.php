@@ -12,17 +12,21 @@ if( get_field('profile_img', 'user_'.$userID ) ){
 ?>
 
 <div class="col-4">
-    <a href="<?php echo get_author_posts_url($userID ); ?>" class="user_<?php echo $userID ; ?>">
-                    <div class="user-box">
-                        <div class="column c_35"> <div class="circle-img" style="<?php echo $profile; ?>"> </div></div>
-                        <div class="column c_65">   
-                            <h2><?php echo esc_html( $author_obj->first_name ) . ' ' . esc_html( $author_obj->last_name ) ; ?></h2>
-                            <h3><?php echo get_field('job_title_information', 'user_'.$userID); ?></h3>
-                        </div>
-                        <div class="clear"></div>
-                        <div class="line"></div>
-                        <p><strong>Career Level:</strong><?php echo get_field('career_level', 'user_'.$userID ).' &nbsp;&nbsp;<strong>Location:</strong> '.get_field('location', 'user_'.$userID ); ?></p>
-                        <p><strong>Industries:</strong><?php echo get_field('industries', 'user_'.$userID ); ?></p>
-                    </div>
-    </a>
+            <div class="post-box company_box user-box">
+                                        <a href="<?php echo get_author_posts_url($userID ); ?>"><div class="post-box-img" ></div></a>
+                                        <div class="table-box" style="background-image:url(http://www.careerfolio.co.uk/wp-content/uploads/2020/04/Evac-complete-cleantech-solution-building.jpg);">
+                                            <div class="table-cell">
+                                            </div>
+                                        </div>
+                                        <div class="post-box-info">
+                                            <div class="row">
+                                                <div class="col-5"> <a href="<?php echo get_author_posts_url($userID ); ?>"><div class="circle-img" style="<?php echo $profile; ?>"> </div></a></div>
+                                                <div class="col-7"> <a class="btn-style-roundbox" href="<?php echo get_author_posts_url($userID ); ?>">Connect +</a></div>
+                                           </div>
+                                           <h3><?php echo esc_html( $author_obj->first_name ) . ' ' . esc_html( $author_obj->last_name ) ; ?></h3>
+                                           <p><?php echo get_field('job_title_information', 'user_'.$userID); ?></p>
+                                        </div>
+            </div>
 </div>
+
+
