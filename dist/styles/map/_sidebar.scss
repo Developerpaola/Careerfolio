@@ -1,0 +1,17 @@
+.sidebar ul{padding:0px}
+.sidebar li{
+    list-style: none;
+    font:$font-normal;
+    font-weight: 700;
+    color: $black-color;
+    margin-bottom: 20px;
+
+    a{padding-bottom: 5px; border-bottom: 2px solid transparent;color: $black-color;
+        &:hover{border-bottom: 2px solid $dark-color; color: $black-color;}
+    }
+
+    &.current-menu-item{
+        a{border-bottom: 2px solid $dark-color; color: $black-color;} 
+    }
+    
+}

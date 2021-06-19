@@ -1,0 +1,26 @@
+.flag{
+    padding: 10px; background-color: $light-color; text-align: center;
+    p{margin: 0 auto;}
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.white{background-color: $white-color;}
+    &.white p{margin-bottom: 30px; font: $font-h3; font-weight: 300;}
+
+    &.dark-flag{ background-color: $dark-color;}
+    &.dark-flag h2{color: $white-color;}
+    &.dark-flag p{color: $white-color;}
+    &.dark-flag .line{border-color: $second-color;}
+
+    .box{max-width: 450px; min-height: 350px; padding: 50px 0 50px 10%;}
+    
+    &.white .box{max-width: 1000px;}
+
+}
+
+.badget{
+    color: $dark-color;
+    background-color: $second-color;
+}
+

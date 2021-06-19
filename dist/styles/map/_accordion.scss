@@ -1,0 +1,15 @@
+.vertical-accordion{
+    h2{text-transform: uppercase;}
+
+    p{ font: $font-h3; font-weight: 300;}
+
+    .accordion-section{padding: 40px 0;   border-bottom: 1px solid $light-color;}
+
+    .information{
+        p{max-height: 0px; overflow: hidden; margin-bottom: 0px; transition: 0.8s;
+            &:first-of-type{ max-height: 1000px; margin-bottom: 25px;}
+        }
+
+        &.active p{ max-height: 1000px; margin-bottom: 25px;}
+    }
+}

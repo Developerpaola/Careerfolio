@@ -1,0 +1,56 @@
+.hero{
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: table;
+
+    h1 { font: $font-bigger; }
+    .hero-container{display: table-cell; vertical-align: middle; }
+
+    &.normal{
+        padding: 50px 0 250px;
+        h1{font: $font-bigger; text-transform: uppercase;}
+    }
+
+    &.bigger{ text-align: center;}
+    &.bigger .hero-container{height: 600px;}
+    &.bigger .hero-container .container{max-width: 550px;}
+
+    &.simple-page{
+        padding: 50px 0 100px;
+        background-color: $dark-color;
+        text-align: center;
+        h1{ color: $white-color; font: $font-h1; margin-bottom: 15px; }
+        h3{ color: $white-color; max-width: 500px;  margin: 15px auto 25px !important; }
+        p{ color: $white-color; font: $font-small; }
+        img{margin-bottom: 15px;}
+
+        .content-section{
+            max-width: 70%;
+            float: right;
+            padding: 50px 0;
+        }
+        .attachment-full{ float: left; max-width: 570px; height: auto;  margin: 0px;}
+
+        &.post-hero{
+            width: 100%;
+            .attachment-full{ float: right; margin: 0px;}
+            .content-section{ float: left; margin: 0px; padding: 80px 0;}
+        }
+    }
+
+}
+
+.hero-information{
+    background-color: $third-color;
+    margin-top: 100px;
+    .content-section {
+        max-width: 70%;
+        float: right;
+        padding: 50px 0;
+    }
+    h2{font: $font-title; color: $white-color; max-width: 550px; margin-bottom: 15px; margin-right: 100px;}
+    p{font: $font-h3; font-weight: 300; color: $white-color;  max-width: 550px; }
+    img{max-height: 440px; width: auto; display: inline-block;}
+}

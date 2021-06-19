@@ -1,0 +1,23 @@
+$dark-color:#1B003E;
+$black-color:#535977;
+$white-color:#FFF;
+$light-color: #FDE7EE;
+$blue-color: #02A6D2;
+$second-color: #FF3F7D;
+$third-color: #E0396F;
+$grey-color: #B4B4B4;
+$grey-light-color: #F6F6F6;
+$four-color: #F0F1F7;
+
+@import url('https://use.typekit.net/ngk8ftl.css');
+$font:  sofia-pro, sans-serif;
+
+/* titles */
+$font-bigger: 900 60px/65px $font;
+$font-title: 900 70px/70px $font;
+$font-h1: 900 45px/50px $font;
+$font-h2: 900 35px/40px $font;
+$font-h3: 900 25px/30px $font;
+$font-normal: 500 18px/28px $font;
+$font-btn: 500 15px/23px $font;
+$font-small: 500 14px/22px $font;

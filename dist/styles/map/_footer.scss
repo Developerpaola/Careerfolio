@@ -1,0 +1,32 @@
+footer{
+    padding: 100px 0 40px;
+    background-color: $four-color;
+    h3{ margin-bottom: 27px; font: $font-normal; font-weight: 700; color: $dark-color;}
+
+    ul{
+        padding: 0px;
+        margin: 0px;
+            
+        li{
+            list-style: none;
+            margin-bottom: 15px;
+            a { 
+                color: $black-color; font: $font-normal;   ;
+                &:hover { color: $third-color; }
+            } 
+        
+            &.current-menu-item a{ color: $third-color;}
+        }
+    }
+}
+
+.foot{
+    padding-top: 100px ;
+    p{ font:$font-small; }
+    svg{margin-left: 15px;}
+    a:hover svg circle{ fill:$dark-color;}
+}
+
+
+
+
