@@ -1,17 +1,34 @@
-<section class="section third ">
+<section class="section ">
         <div class="container">
             <div class="testimonial-slider">
-                <div>
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/images/home/stars-review-bottl.svg" alt="testimonial" />
-                    <h2>Matt & Phil’s Choices Are always on point every month!”</h2>
-                    <p>Laura Gray</p>
-                </div>
-                <div>
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/images/home/stars-review-bottl.svg" alt="testimonial" />
-                    <h2>Matt & Phil’s Choices Are always on point every month!”</h2>
-                    <p>Laura Gray</p>
-                </div>
+
+                <?php
+                    if( have_rows('testimonials') ):
+                        while( have_rows('testimonials') ) : the_row(); 
+                    ?>
+                        <div>
+                            <div class="row align-items-center">
+                                <div class="col-1"></div>
+                                <div class="col-3"> 
+                                    <img src="<?php echo get_sub_field( 'image' ); ?>" alt="testimonial" />
+                                   
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col">
+                                    <h2><?php the_sub_field( 'testimonial' ); ?></h2>
+                                    <h3><?php the_sub_field( 'author' ); ?></h3>
+                                    <p class="more-info"><?php the_sub_field( 'more_info' ); ?></p>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                        </div>
+
+                    <?php
+                        endwhile;
+                    endif;
+                ?>
+
+                
             </div>
-            <a href="<?php the_permalink(46); ?>" class="read-more">leave a review</a> 
         </div>
     </section>

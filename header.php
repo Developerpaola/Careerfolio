@@ -25,7 +25,7 @@
 
 <header>
 	<div class="container">
-		<div class="row ">
+		<div class="row">
 			<div class="col-2">
 				<a href="<?php echo get_site_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/header_footer/logo-careerfolio.svg" class="img-fluid" alt="<?php bloginfo('name'); ?>"></a>
 			</div>
@@ -40,9 +40,12 @@
 					<?php if( !is_user_logged_in() ){ ?>
 						<a id="login-nav"  class="read-more" href="<?php echo get_the_permalink(430); ?>">Create an account</a>
 					<?php }else{ 
-							
+							if( get_field('profile_img', 'user_'.get_current_user_id()  ) ){
+								$profile = 'background-image:url('. get_field('profile_img', 'user_'.get_current_user_id()  ).')';
+								echo '<a href="'.get_the_permalink(45).'" class="circle-img" style="'.$profile.'"> </a>';
+							}
 					?>
-						<a id="login-nav" class="read-more" href="<?php echo get_the_permalink(45); ?>">My Account</a>
+						
 					<?php } ?>
 					<a href="" class="icon-link">
 						<svg xmlns="http://www.w3.org/2000/svg" width="17.824" height="20.521" viewBox="0 0 17.824 20.521">

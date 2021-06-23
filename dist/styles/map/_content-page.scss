@@ -15,6 +15,7 @@
     li ul,
     li ol{ margin-top: 20px;}
 
+
 }
 
 
@@ -29,5 +30,66 @@ blockquote{
     cite{
         font: $font-h3 ;
         font-weight: 300;
+    }
+}
+
+.information-page{
+    p{ font: $font-normal; color: $black-color !important; line-height: 30px !important; }
+    .information-container{
+        margin-top: 40px;
+    }
+    .line{ max-width: 1000px; border-bottom: 1px solid $grey-light-color; margin:0px auto;}
+    .nav-perfil{
+        padding: 0px;
+        list-style: none; 
+        margin-top: 50px;
+        margin-bottom: 0px;
+            li{display: inline-block; 
+                    a{ 
+                        display: inline-block;
+                        padding: 10px 0; 
+                        margin-right: 25px; 
+                        border-bottom: 3px solid transparent; 
+                        margin-bottom: -1px;
+                        color: $black-color;
+                        &:hover{color:$dark-color; border-bottom: 3px solid $third-color;}   
+                    }
+                    &.active a{color:$dark-color; border-bottom: 3px solid $third-color;}
+            }
+        }
+    
+}
+
+
+.more-info{
+    .info-row{margin-bottom: 90px;}
+    img{
+        max-height: 426px;
+        margin: 0px auto;
+        display: block;
+    }
+    h3{ font: $font-h2; margin-bottom: 35px; }
+    li{margin-bottom: 25px;}
+
+    .info-row:nth-child(0n+3) { 
+        background-color: $dark-color;
+        color: $white-color;
+        padding: 50px 0;
+        h3{color: $white-color; }
+        p{color: $white-color; }
+    }
+}
+
+.single-information{
+    h1{ font: $font-h1; margin-bottom: 20px;}
+    p{
+        font:$font-normal; color: $black-color;
+        .subtitle{margin:0px; }
+    }
+    
+    .circle-img{
+        width: 90px;
+        height: 90px;
+        display: inline-block;
     }
 }

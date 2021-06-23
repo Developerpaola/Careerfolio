@@ -99,8 +99,13 @@ $post_author_id = get_post_field( 'post_author');
                                 }
                                 $total_jobs = $num_jobs;
 
+                                $col = "4";
+                                if  (is_author() ){
+                                  $col = "6";
 
-                                $msg .='<div class="col-4"><div class="post-box company_box">
+                                }
+
+                                $msg .='<div class="col-'.$col.'"><div class="post-box company_box">
                                         <a href="'.get_permalink( ).'"><div class="post-box-img" style="'.$hero.'"></div></a>
                                         <div class="table-box" style="'.$hero.'">
                                             <div class="table-cell">
@@ -109,7 +114,7 @@ $post_author_id = get_post_field( 'post_author');
                                         <div class="post-box-info">
                                             <div class="row">
                                                 <div class="col-5"> <a href="'.get_permalink( ).'"><div class="circle-img" style="'.$logo.'"> </div></a></div>
-                                                <div class="col-7"> <a class="btn-style-roundbox" href="'.get_permalink( ).'">Connect +</a></div>
+                                                <div class="col-7 text-right"> <a class="btn-style-roundbox" style="margin:10px 0;" href="'.get_permalink( ).'">Connect +</a></div>
                                            </div>
                                            <h3>'.get_the_title( ).'</h3>
                                            <p>'.wp_trim_words(get_field('description'), 5) .'</p>

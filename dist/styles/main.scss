@@ -3,6 +3,6 @@
 @import 'map/_hero';
 @import 'map/_flag_box';
 @import 'map/_tabs', 'map/_slider', 'map/_accordion';  
-@import 'map/sidebar'; 
+@import 'map/sidebar', 'map/comments';
 @import 'map/content-page';
-@import 'map/form';
+@import 'map/form','map/profile';

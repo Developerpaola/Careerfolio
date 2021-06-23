@@ -51,3 +51,203 @@
     border-top: 1px solid $four-color;
     border-bottom: 1px solid $four-color;
 }
+
+/*------- Box News------------*/
+.post-box{ 
+    -webkit-box-shadow: 0px 2px 30px -4px rgba(148,148,148,0.4);
+    -moz-box-shadow: 0px 2px 30px -4px rgba(148,148,148,0.4);
+    box-shadow: 0px 2px 30px -4px rgba(148,148,148,0.4);    
+    width: 100%; 
+    border: 1px solid #EDEDED; 
+    margin: 15px 2% 15px 0; 
+    min-height: 320px; 
+    background-color: #fff; 
+    display: inline-block; 
+    vertical-align: top; 
+    position: relative; 
+
+    h3{ margin-top: 10px; margin-bottom: 10px; min-height: 35px; text-transform: uppercase; font: $font-normal; line-height: 21px;}
+   
+
+    p{ font: $font-small;
+        &.pill{
+            padding: 1px 5px;
+            background-color: #F0F1F7;
+            color: #535977;
+            font: 700 12px sofia-pro, sans-serif;
+            border-radius: 11px;
+            display: inline-block;
+        }
+    }
+
+    .post-box-img{
+        width: 100%; 
+        display: table; 
+        background-position: center; 
+        background-size: cover; 
+        background-position: center;
+        .post-box-img-cell{ 
+            display: table-cell; 
+            height: 100px; 
+            vertical-align: middle; 
+            background-color: rgba(0,0,0,0.7); 
+            transition: 0.6s; 
+            opacity: 0; 
+            text-align: center; 
+        }
+        .open-addon{margin: 10px;}
+        .post-addons{ top:45px; right: 10px; }
+
+    }
+    &:hover .post-box-img-cell{ opacity: 1; }
+    .post-box-info{ width: 90%; display: block;margin: auto; 
+        .excert_box p{color: #626262;height: 80px;overflow: hidden;line-height: 19px;}
+    }
+    .circle-img{
+        width: 75px;
+        height: 75px;
+        margin: 10px;
+    }
+
+    .label-industries{
+        display: inline-block;
+        a{display: inline-block;}
+    }
+    .label-event{margin-bottom: 0;margin-top: 12px;}
+
+    .table-post-box{width: 100%; display: table;  }
+    .table-box-cell{width: 100%; height: 370px; display: table-cell; vertical-align: middle; text-align: center; 
+        &:hover{ background-color: rgba(101,129,209,0.5); }
+    } 
+
+    .btn-style-round{margin: 5px 0; background: #F7F8FA;}
+
+    .line{margin: 0px 0px 5px;}
+
+    .date-info{ line-height: 34px;}
+    .excert_box{min-height: 100px;}
+    .table-terms{ display: block; width: 100%; 
+        tbody{ display: block; }
+        tr{margin:5px 0; background-color: #F7F8FA; border: 1px solid #EDEDED;   border-radius: 5px; display: block;
+            td{width: 39%; padding: 8px 5%; display: inline-block;
+                &.value{ text-align: right; }
+            }
+        }
+    }
+
+    &.find-group{
+        border-radius: 15px;
+        padding-bottom: 15px;
+        max-height: 395px;
+        h3{ text-transform: capitalize; color:$dark-color; font-weight: 700;
+        }
+        
+        p{ margin: 0px ;}
+        .line{ border-bottom:1px solid $four-color;  max-width: 1000px !important; margin: 10px 0;}
+        .info{ padding: 1px 5px; background-color: $four-color; color: $black-color; font: $font-smalltwo; border-radius: 11px; display: inline-block;}
+        .table-box{ margin-bottom: 10px; border-radius: 15px 15px 0 0; overflow: hidden; background-size: cover; background-position: center;}
+        .table-cell{height: 130px;}
+        .excert_box {
+            min-height: 80px;
+        }
+    }
+
+
+}
+    
+ 
+   
+    
+    .post-box.company_box .table-box{
+      display: table;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .post-box.company_box .table-box:hover .table-cell{background: rgba(0,0,0,0.4);}
+    .post-box.company_box .table-box:hover .table-cell .black-btn{display: inline-block;}
+    .post-box.company_box .table-box:hover .table-cell .white-btn{display: inline-block;}
+    .post-box.company_box .table-cell{transition: 1s; height: 135px;text-align: center;vertical-align: middle;display: table-cell;width: 100%;}
+    .post-box.company_box .table-cell .black-btn{display: none;
+      background-color: #231f20;
+     
+      padding: 10px;
+      border-radius: 20px;
+    }
+    .post-box.company_box .table-cell .white-btn{display: none;
+      background-color: #FFFFFF;
+      padding: 10px;
+     
+      border-radius: 20px;
+    }
+    .post-box .info-label{display: inline-block;background-color: #FFFFFF;border: 1px solid #EDEDED;margin-bottom: 20px;padding: 7px;}
+    .post-box .info-co{padding: 15px 0;}
+
+
+    /*-------- Company Box-----------*/
+.company_box{  
+    min-height: 281px;  
+    h3{    min-height: auto;
+        margin: 10px 11px 0px 11px !important;
+        text-transform: capitalize;
+        color: $dark-color; 
+    }
+      
+    p{  margin: 10px 11px 0px 11px !important; }
+    .circle-img{ width: 80px; height: 80px; margin: -40px 0px 0px 11px; }
+    .table-box-cell{height: 170px;}
+}
+
+
+.flag-box{
+    background: $white-color 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 20px #74747429;
+    border-radius: 15px;
+    padding: 15px 40px 25px 40px;
+    min-height: 170px;
+    margin-bottom: 30px;
+    h1{
+        margin:0 0 10px;
+    }
+    h3{
+        margin: -5px 0 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #d5d5d5;
+        color: $black-color;
+        font-weight: 400 !important;
+    }
+
+    h4{
+        font: $font-h2;
+        letter-spacing: 0px;
+        color: #02A6D2;
+    }
+
+    h5{  margin-bottom: 20px; font: $font-normal; font-weight: 700;}
+            
+    p{ color: $black-color;
+       font: $font-smalltwo;
+        &.pill{
+            padding: 1px 5px;
+            background-color: $four-color;
+            border-radius: 11px;
+            display: inline-block;
+        }
+    }
+}
+
+
+.flag-quick{
+    background-color: $four-color;
+    padding: 80px 0;
+    text-align: center;
+    h2{text-align: center; font: $font-h1; margin-bottom: 50px;}
+    h3{text-align: center; margin-bottom: 10px;}
+    p{margin-bottom: 0px;} 
+
+    &.quick-back{
+        background-position: left;
+        margin-bottom: 100px; 
+    }
+} 

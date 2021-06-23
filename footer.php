@@ -39,7 +39,7 @@
 							<p><?php echo '© '.date('Y').' careerfolio'; ?></p>
 						</div>
 						<div class="col-5 text-right">
-							<?php if( get_field('twitter', 'option') ){ ?>
+							<?php if( get_field('url_twitter', 'option') ){ ?>
 								<a href="<?php echo get_field('twitter', 'option'); ?>" class="twitter" target="_blank">
 									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
 										<g id="Group_295" data-name="Group 295" transform="translate(-154 -1738)">
@@ -50,7 +50,7 @@
 								</a>
 
 							<?php } ?>
-							<?php if( get_field('instagram', 'option') ){ ?>
+							<?php if( get_field('url_instagram', 'option') ){ ?>
 								<a href="<?php echo get_field('instagram', 'option'); ?>" class="instagram" target="_blank">
 									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
 										<g id="Group_297" data-name="Group 297" transform="translate(-199 -1738)">
@@ -64,7 +64,7 @@
 									</svg>
 								</a>
 							<?php } ?>
-							<?php if( get_field('linkedin', 'option') ){ ?>
+							<?php if( get_field('url_linkedin', 'option') ){ ?>
 								<a href="<?php echo get_field('linkedin', 'option'); ?>" class="linkedin" target="_blank">
 									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
 										<g id="Group_294" data-name="Group 294" transform="translate(-244 -1738)">
@@ -78,7 +78,7 @@
 									</svg>
 								</a>
 							<?php } ?>
-							<?php if( get_field('facebook', 'option') ){ ?>
+							<?php if( get_field('url_facebook', 'option') ){ ?>
 								<a href="<?php echo get_field('facebook', 'option'); ?>" class="facebook" target="_blank">
 									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
 										<g id="Group_296" data-name="Group 296" transform="translate(-289 -1738)">

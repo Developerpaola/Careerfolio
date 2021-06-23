@@ -79,6 +79,229 @@ if( function_exists('acf_add_options_page') ) {
  
 }
 
+//CPT to events
+function custom_post_type_events() {
+ 
+    // Set UI labels for Custom Post Type
+        $labels = array(
+            'name'                => _x( 'Events', 'Post Type General Name', 'twentytwenty' ),
+            'singular_name'       => _x( 'Event', 'Post Type Singular Name', 'twentytwenty' ),
+            'menu_name'           => __( 'Events', 'twentytwenty' ),
+            'parent_item_colon'   => __( 'Parent Event', 'twentytwenty' ),
+            'all_items'           => __( 'All Events', 'twentytwenty' ),
+            'view_item'           => __( 'View Event', 'twentytwenty' ),
+            'add_new_item'        => __( 'Add New Event', 'twentytwenty' ),
+            'add_new'             => __( 'Add New', 'twentytwenty' ),
+            'edit_item'           => __( 'Edit Event', 'twentytwenty' ),
+            'update_item'         => __( 'Update Event', 'twentytwenty' ),
+            'search_items'        => __( 'Search Event', 'twentytwenty' ),
+            'not_found'           => __( 'Not Found', 'twentytwenty' ),
+            'not_found_in_trash'  => __( 'Not found in Trash', 'twentytwenty' ),
+        );
+         
+    // Set other options for Custom Post Type
+         
+        $args = array(
+            'label'               => __( 'events', 'twentytwenty' ),
+            'description'         => __( 'Event news and reviews', 'twentytwenty' ),
+            'labels'              => $labels,
+            // Features this CPT supports in Post Editor
+            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+            // You can associate this CPT with a taxonomy or custom taxonomy. 
+            'taxonomies'          => array( 'genres' ),
+            /* A hierarchical CPT is like Pages and can have
+            * Parent and child items. A non-hierarchical CPT
+            * is like Posts.
+            */ 
+            'hierarchical'        => false,
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'menu_position'       => 5,
+            'can_export'          => true,
+            'has_archive'         => true,
+            'exclude_from_search' => false,
+            'publicly_queryable'  => true,
+            'capability_type'     => 'post',
+            'show_in_rest' => true,
+     
+        );
+         
+        // Registering your Custom Post Type
+        register_post_type( 'events', $args );
+     
+    }
+     
+    /* Hook into the 'init' action so that the function
+    * Containing our post type registration is not 
+    * unnecessarily executed. 
+    */
+     
+    add_action( 'init', 'custom_post_type_events', 0 );
+
+
+
+
+add_action( 'init', 'custom_post_marketplace_type', 0 );
+function custom_post_marketplace_type() {
+ 
+// Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Marketplace', 'Post Type General Name', 'pilotspider' ),
+        'singular_name'       => _x( 'Marketplace', 'Post Type Singular Name', 'pilotspider' ),
+        'menu_name'           => __( 'Marketplace', 'pilotspider' ),
+        'parent_item_colon'   => __( 'Parent Marketplace posts', 'pilotspider' ),
+        'all_items'           => __( 'All Marketplace posts', 'pilotspider' ),
+        'view_item'           => __( 'View Marketplace post', 'pilotspider' ),
+        'add_new_item'        => __( 'Add New Marketplace post', 'pilotspider' ),
+        'add_new'             => __( 'Add New', 'pilotspider' ),
+        'edit_item'           => __( 'Edit Post', 'pilotspider' ),
+        'update_item'         => __( 'Update Post', 'pilotspider' ),
+        'search_items'        => __( 'Search Post', 'pilotspider' ),
+        'not_found'           => __( 'Not Found', 'pilotspider' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'pilotspider' ),
+    );
+     
+// Set other options for Custom Post Type
+     
+    $args = array(
+        'label'               => __( 'Marketplace', 'pilotspider' ),
+        'description'         => __( 'Marketplace posts news and reviews', 'pilotspider' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+    
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'menu_icon'           => 'dashicons-forms',
+        'show_in_rest' => true,
+ 
+    );
+     
+    // Registering your Custom Post Type
+    register_post_type( 'marketplace', $args );
+ 
+}
+
+
+add_action( 'init', 'create_marketplace_taxonomies', 0 );
+function create_marketplace_taxonomies() {
+
+  
+
+    register_taxonomy(
+        'categorie_marketplace',
+        'marketplace',
+        array(
+            'labels' => array(
+                'name' => 'Categories',
+                'add_new_item' => 'Add New Categorie',
+                'new_item_name' => "New Categorie"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'public'       => true,
+            'hierarchical' => true
+        )
+    );
+    register_taxonomy(
+        'categorie_tags',
+        'marketplace',
+        array(
+            'labels' => array(
+                'name' => 'Tags',
+                'add_new_item' => 'Add New tag',
+                'new_item_name' => "New Tag"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'public'       => true,
+            'hierarchical' => true
+        )
+    );
+}
+
+/*
+* Creating a function to create our CPT
+*/
+ 
+function custom_post_type_messages() {
+ 
+// Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Messages', 'Post Type General Name', 'twentytwenty' ),
+        'singular_name'       => _x( 'Message', 'Post Type Singular Name', 'twentytwenty' ),
+        'menu_name'           => __( 'Messages', 'twentytwenty' ),
+        'parent_item_colon'   => __( 'Parent Message', 'twentytwenty' ),
+        'all_items'           => __( 'All Messages', 'twentytwenty' ),
+        'view_item'           => __( 'View Message', 'twentytwenty' ),
+        'add_new_item'        => __( 'Add New Message', 'twentytwenty' ),
+        'add_new'             => __( 'Add New', 'twentytwenty' ),
+        'edit_item'           => __( 'Edit Message', 'twentytwenty' ),
+        'update_item'         => __( 'Update Message', 'twentytwenty' ),
+        'search_items'        => __( 'Search Message', 'twentytwenty' ),
+        'not_found'           => __( 'Not Found', 'twentytwenty' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'twentytwenty' ),
+    );
+     
+// Set other options for Custom Post Type
+     
+    $args = array(
+        'label'               => __( 'messages', 'twentytwenty' ),
+        'description'         => __( 'Message news and reviews', 'twentytwenty' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+        'taxonomies'          => array( 'genres' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-admin-comments',
+ 
+    );
+     
+    // Registering your Custom Post Type
+    register_post_type( 'messages', $args );
+ 
+}
+ 
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not 
+* unnecessarily executed. 
+*/
+ 
+add_action( 'init', 'custom_post_type_messages', 0 );
+
+
+
 
 /*----------List Users--------------*/
 add_shortcode( 'list_user', 'list_user_func' );
@@ -119,8 +342,8 @@ function list_user_func($atts) {
 }
 
 /*-----------List jobs--------------*/
-add_shortcode( 'list_groups', 'list_groups_func' ); 
-function list_groups_func( ) {
+add_shortcode( 'list_jobs', 'list_jobs_func' ); 
+function list_jobs_func( ) {
 
     $msg = '';
     $post_list = get_posts( array(
@@ -134,6 +357,7 @@ function list_groups_func( ) {
                             
                              
                             foreach ( $post_list as $post ) {
+                                
 
                                 $post_author_id = get_post_field ('post_author', $post->ID  );
 
@@ -157,6 +381,62 @@ function list_groups_func( ) {
                                         </a>';
                             }
     return $msg;
+}
+
+
+
+add_shortcode( 'list_groups', 'list_groups_func' ); 
+function list_groups_func( ) {
+
+    $text = $atts['text'];
+    $sort = $atts['sort'];
+    $industries = $atts['industries'];
+    $location = $atts['location'];
+  
+
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $args =  array( 
+                                'orderby' => 'title',
+                                'order' => $sort,  
+                                'post_type'  => 'group',
+                                'posts_per_page' => 6,
+                                's' => $text,
+                                'paged' => $paged,
+                                
+                            ) ;
+    if ($industries != "") {
+        $args['meta_query'][] = array('key' => 'industries', 'value' => $industries, 'compare' => 'LIKE');
+    }
+    if ($location != "") {  
+        $args['meta_query'][] = array('key' => 'location', 'value' => $location, 'compare' => 'LIKE');
+    }
+    $postslist = new WP_Query( $args );
+
+
+    if ( $postslist->have_posts() ){
+        echo  '<div class="row align-items-start">';
+        while ( $postslist->have_posts() ) : $postslist->the_post(); 
+
+                                get_template_part("template-part/community/box","groups");
+                            
+         endwhile;  
+         echo '</div>';
+
+             $big = 999999999;
+     echo '<nav class="pagination">'.paginate_links( array(
+          'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+          'format' => '?paged=%#%',
+          'current' => max( 1, get_query_var('paged') ),
+          'total' => $postslist->max_num_pages,
+          'prev_text' => '&laquo;',
+          'next_text' => '&raquo;'
+     ) ).'</nav>';
+
+    }else{
+        echo "<center><h2>Sorry there are no groups matching your selection</h2></center>";
+    }
+                            
+   
 }
 
 /*-------------List industries-------------*/
@@ -335,9 +615,9 @@ function list_companies_func($atts) {
     $sort = $atts['sort'];
     $industries = $atts['industries'];
     $location = $atts['location'];
+    $author = $atts['author'];
     //$locationname = get_term($location);
 
-    $msg = '';
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $args =  array( 
                                 'orderby' => 'title',
@@ -353,6 +633,10 @@ function list_companies_func($atts) {
     }
     if ($location != "") {  
         $args['meta_query'][] = array('key' => 'location', 'value' => $location, 'compare' => 'LIKE');
+    }
+    
+    if ($author != "") {  
+        $args['author__in'] = $author;
     }
     $postslist = new WP_Query( $args );
 
@@ -380,7 +664,6 @@ function list_companies_func($atts) {
     }
                             
 
-    return $msg;
 }
 
 /*------------list promotions-------------------*/

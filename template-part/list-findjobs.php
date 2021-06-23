@@ -16,7 +16,7 @@ $companyPostId = get_field('company', get_the_ID() );
                                                 </div>
                                              </div>
                                         </a>';
-                            }
+                            
 
                             echo $msg;
 

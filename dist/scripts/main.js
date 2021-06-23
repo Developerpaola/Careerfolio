@@ -1,7 +1,10 @@
 $( document ).ready(function() {
     
     $('.opener-slider').slick();
-    $('.testimonial-slider').slick();
+    $('.testimonial-slider').slick({
+        dots: true,
+        infinite: false,
+    });
 
     $( ".down-btn" ).click(function() {
         let parent = $( this ).parent();

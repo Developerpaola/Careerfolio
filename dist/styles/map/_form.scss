@@ -16,21 +16,21 @@ form{
         background-color: $second-color;
         color: $white-color;
         font: $font-normal;
-        padding: 7px 20px;
-        border-radius: 15px;
+        padding: 7px;
+        border-radius: 25px;
         border: none;
         &:hover{
             background-color: $third-color;
-            color: $white-color
+            color: $white-color 
         }
-    }
+    } 
 
     &.search-form{
         select{ background-color: $black-color; border-radius: 23px 0px 0px 23px; color: $white-color; padding: 7px 20px;}
         input[type="submit"]{  background-color: $four-color; border-radius:  0px 20px 20px 0px; color: $black-color;}
     }
 
-}
+} 
 
 
 #show-results{ padding: 95px 0 56px;}

@@ -1,4 +1,11 @@
-header{padding: 35px 0 0;}
+header{padding: 35px 0 0;
+    .circle-img{
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        margin: 0 0 -10px 0;
+    }
+}
 
 /* Primary menu */
 header .menu { list-style: none; margin: 0px;}
@@ -14,5 +21,6 @@ header .menu li{
     
     &.current-menu-item a{ color: $dark-color; border-bottom: 8px solid $second-color;}
 
+    
    
 }
