@@ -51,21 +51,20 @@ $post_company = get_posts( array(
 
 				<div class="col">
 					<div class="flag-box">
-
-					<?php if( get_current_user_id() == $userauthor->ID){ 
-						echo '<div class="flag-edit">';
-	 					echo '<a href="'.get_the_permalink(45).'/?edit=1" class="btn-style-blue">Edit</a>';
-	 					echo '<a href="javascript:void(0)" class="btn-style-grey open-addon" id-attr="more-addons">...</a>
-				 				<div id="more-addons" class="post-addons">
-				 					<span class="btn-close open-addon" id-attr="more-addons">X</span>
-				 					<a href="'.get_the_permalink( 84 ).'" class="btn-style-blue">Add Insights</a>
-				 					<a href="'.get_the_permalink( 106 ).'" class="btn-style-blue">Add Company</a>
-				 					<a href="'.get_author_posts_url(get_current_user_id()).'" class="btn-style-blue">View Profile</a>
-				 				</div>';
-						echo '</div>';
-	 				} ?>
 						<h1><?php echo esc_html( $userauthor->first_name ) . ' ' . esc_html( $userauthor->last_name ); ?></h1>
-						<h3 class="subtitle"><?php the_field('job_title_information', 'user_'.$userauthor->ID ); ?></h3>
+						<h3 class="subtitle">		
+							<div class="row count-info align-items-center">
+								<div class="col-8">
+									<?php the_field('job_title_information', 'user_'.$userauthor->ID ); ?>
+								</div>
+								<div class="col text-right">
+									<?php if( get_current_user_id() == $userauthor->ID){ 
+										echo '<a class="edit-btn" href="'.get_the_permalink(45).'/?edit=1">Edit</a>';
+									} ?>
+								</div>
+							</div>
+						</h3>
+					
 						<div class="row count-info align-items-center">
 							<div class="col-2">
 								<h4>0</h4>
@@ -79,9 +78,9 @@ $post_company = get_posts( array(
 								<h4>0</h4>
 								<p>Connections</p>
 							</div>
-							<div class="col">
+							<div class="col-1">
 							</div>
-							<div class="col-3 text-right">
+							<div class="col text-right">
 								<!-- Estar Btn--->
 								<?php get_template_part("template-part/community/box","connect-message-btns"); ?>
 								<!-- End BTN--->
@@ -92,7 +91,17 @@ $post_company = get_posts( array(
 					<div class="row gap-0">
 						<div class="col">
 							<div class="flag-box">
-								<h5>I can help you with:</h5>
+								<div class="row">
+									<div class="col-8">
+										<h5>I can help you with:</h5>
+									</div>
+									<div  class="col  text-right" >
+										<?php if( get_current_user_id() == $userauthor->ID){ 
+											echo '<a class="edit-btn" href="'.get_the_permalink(45).'/?edit=1">Edit</a>';
+										} ?>
+									</div>
+								</div>
+								
 								<p class="pill">Creative art, craft and design</p>
 								<p class="pill">Mystery shopping</p>
 								<p class="pill">Writing and rewriting</p>
@@ -101,7 +110,18 @@ $post_company = get_posts( array(
 						</div>
 						<div class="col">
 							<div class="flag-box">
-								<h5>I want to grow in:</h5>
+								
+								<div class="row">
+									<div class="col-8">
+										<h5>I want to grow in:</h5>
+									</div>
+									<div  class="col text-right" >
+										<?php if( get_current_user_id() == $userauthor->ID){ 
+											echo '<a class="edit-btn" href="'.get_the_permalink(45).'/?edit=1">Edit</a>';
+										} ?>
+									</div>
+								</div>
+								
 								<p  class="pill">Search engine marketing</p>
 							</div>
 						</div>

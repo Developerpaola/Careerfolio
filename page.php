@@ -13,7 +13,7 @@
  */
 
 get_header();
-?>
+?> 
 
 <main role="main" class="main content-information">
     <div class="container">

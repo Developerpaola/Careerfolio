@@ -69,8 +69,6 @@ img{ max-width: 100%; height: auto !important; }
 .btn-whiteblue{ display: inline-block; padding: 15px 30px; margin: 5px; border:1px solid #6581D1; background-color: #FFFFFF;  border-radius: 5px;}
 .btn-whiteblue:hover{color: #FFFFFF;background-color: #6581D1;}
 
-.btn-close{ width: 30px;  line-height: 30px; text-align: center; border-radius: 50%; display: block; float: right; background-color: #6581D1; cursor: pointer; }
-.btn-close:hover{ background-color: #626262 }
 
 .white-btns{
   display: inline-block;
@@ -420,24 +418,7 @@ height: 237px;
 }
 /*------ More Information Box ------*/
 .more-information.responsive-btns{display: none;}
-.post-addons{
-    position: absolute;
-    right: 0;
-    width: 130px;
-    padding: 0px;
-    overflow: hidden;
-    max-height: 0px; 
-    transition: 0.8s;
-    z-index: 999;
-}
-.post-addons.active{max-height: 500px; padding: 10px;  background-color: #fff;  box-shadow: 3px 3px 5px rgba(116,116,116,0.6);}
-.post-addons .btn-style-blue {
-    width: 90%;
-    text-align: center;
-    padding: 10px 5%;
-    margin: 5px auto 5px;
-    display: inline-block;
-}
+
 
 
 

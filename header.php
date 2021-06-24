@@ -42,7 +42,7 @@
 					<?php }else{ 
 							if( get_field('profile_img', 'user_'.get_current_user_id()  ) ){
 								$profile = 'background-image:url('. get_field('profile_img', 'user_'.get_current_user_id()  ).')';
-								echo '<a href="'.get_the_permalink(45).'" class="circle-img" style="'.$profile.'"> </a>';
+								echo '<a href="'. get_author_posts_url( get_current_user_id() ).'" class="circle-img" style="'.$profile.'"> </a>';
 							}
 					?>
 						

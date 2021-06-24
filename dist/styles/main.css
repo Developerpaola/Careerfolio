@@ -181,6 +181,11 @@ ul li::marker {
   opacity: 0.7;
 }
 
+.edit-btn {
+  color: #E0396F;
+  font: 500 14px/22px sofia-pro, sans-serif;
+}
+
 /* Bg */
 .bg-secondary {
   background-color: #FF3F7D !important;
@@ -995,6 +1000,67 @@ footer ul li.current-menu-item a {
 .flag-quick.quick-back {
   background-position: left;
   margin-bottom: 100px;
+}
+
+.btns-users {
+  position: relative;
+}
+
+.post-addons {
+  position: absolute;
+  right: 0;
+  width: 200px;
+  padding: 0px;
+  overflow: hidden;
+  max-height: 0px;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  z-index: 999;
+  background-color: #FFF;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.post-addons a {
+  display: inline-block;
+  padding: 18px 15px;
+  background-color: #F0F1F7;
+  color: #1B003E;
+  width: 100%;
+  margin-bottom: 10px;
+  font: 500 14px/22px sofia-pro, sans-serif;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.post-addons a:hover {
+  background-color: #E0396F;
+  color: #FFF;
+}
+
+.post-addons.active {
+  max-height: 500px;
+  -webkit-box-shadow: 3px 3px 5px rgba(116, 116, 116, 0.6);
+          box-shadow: 3px 3px 5px rgba(116, 116, 116, 0.6);
+  border: 2px solid #FFF;
+  border-radius: 15px;
+}
+
+.post-addons h5 {
+  font: 700 16px/22px sofia-pro, sans-serif;
+  color: #1B003E;
+}
+
+.post-addons h5.closebtn {
+  cursor: pointer;
+}
+
+.post-addons h5.closebtn:hover {
+  color: #E0396F;
+}
+
+.post-addons .addons-container {
+  padding: 20px;
 }
 
 .nav-pills {

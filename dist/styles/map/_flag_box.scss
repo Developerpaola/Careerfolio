@@ -251,3 +251,42 @@
         margin-bottom: 100px; 
     }
 } 
+
+.btns-users{position: relative;}
+.post-addons{
+    position: absolute; 
+    right: 0;
+    width: 200px;
+    padding: 0px;
+    overflow: hidden;
+    max-height: 0px; 
+    transition: 0.8s;
+    z-index: 999;
+    background-color: $white-color;
+    margin-top: 10px;
+    text-align: left;
+
+    a{
+        display: inline-block; padding: 18px 15px; background-color: $four-color; color: $dark-color;
+        width: 100%;
+        margin-bottom: 10px;
+        font: $font-small;
+        padding: 10px;
+        border-radius: 10px;
+        &:hover{ background-color: $third-color; color: $white-color;}
+    
+    }
+    
+    &.active{max-height: 500px;   box-shadow: 3px 3px 5px rgba(116,116,116,0.6); border: 2px solid $white-color; border-radius: 15px;}
+    h5{ 
+        font: $font-16; color: $dark-color;
+        &.closebtn{
+            cursor: pointer;
+            
+            &:hover{
+                color: $third-color;
+            }
+        }
+    }
+    .addons-container{padding: 20px;}
+}
