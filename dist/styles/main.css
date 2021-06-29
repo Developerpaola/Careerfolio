@@ -194,7 +194,7 @@ ul li::marker {
 
 /* Sections */
 .section {
-  padding: 50px 0;
+  padding: 30px 0;
   text-align: center;
 }
 
@@ -541,11 +541,14 @@ footer ul li.current-menu-item a {
 
 .hero-home h1 {
   font: 900 60px/65px sofia-pro, sans-serif;
+  margin: 5px 0 30px !important;
+  font-size: 52px;
 }
 
 .hero-home p {
   font: 500 18px/28px sofia-pro, sans-serif;
   color: #535977;
+  margin: 30px 0px;
 }
 
 .hero-home img {
@@ -994,7 +997,8 @@ footer ul li.current-menu-item a {
 }
 
 .flag-quick p {
-  margin-bottom: 0px;
+  margin: 5px 30px;
+  font-size: 18px;
 }
 
 .flag-quick.quick-back {
@@ -1405,11 +1409,14 @@ blockquote cite {
 
 .more-info h3 {
   font: 900 35px/40px sofia-pro, sans-serif;
-  margin-bottom: 35px;
+  margin-bottom: 35px !important;
+  max-width: 465px;
 }
 
 .more-info li {
   margin-bottom: 25px;
+  font-size: 18px;
+  max-width: 410px;
 }
 
 .more-info .info-row:nth-child(0n+3) {

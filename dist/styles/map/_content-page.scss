@@ -68,8 +68,9 @@ blockquote{
         margin: 0px auto;
         display: block;
     }
-    h3{ font: $font-h2; margin-bottom: 35px; }
-    li{margin-bottom: 25px;}
+    h3{ font: $font-h2; margin-bottom: 35px !important; max-width: 465px; }
+    li{margin-bottom: 25px;font-size: 18px;
+        max-width: 410px;}
 
     .info-row:nth-child(0n+3) { 
         background-color: $dark-color;
