@@ -77,6 +77,32 @@ button:hover {
   color: #FF3F7D;
 }
 
+button.close-btn {
+  color: #FF3F7D;
+  background-color: transparent !important;
+  border: 0px;
+  padding: 0px;
+}
+
+button.close-btn:before {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  content: "\2715";
+  color: #FF3F7D;
+  border-radius: 50%;
+  background: #FFF;
+  margin: 0 10px 0 0;
+}
+
+button.close-btn:hover:before {
+  color: #FFF;
+  background: #FF3F7D;
+}
+
 ol li::marker {
   color: #1B003E;
   font-weight: 700;
@@ -1451,6 +1477,81 @@ blockquote cite {
   width: 90px;
   height: 90px;
   display: inline-block;
+}
+
+.modal-style {
+  background-color: #F0F1F7;
+  padding: 35px 0;
+}
+
+.page-modal-style {
+  padding: 60px 0;
+}
+
+.page-modal-style.container {
+  max-width: 835px;
+  min-height: 500px;
+}
+
+.page-modal-style h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.page-modal-style h3.subtitle {
+  font: 500 18px/28px sofia-pro, sans-serif;
+  text-align: center;
+  margin-bottom: 50px !important;
+}
+
+.page-modal-style p {
+  font: 500 18px/28px sofia-pro, sans-serif;
+}
+
+.page-modal-style .ur-frontend-form {
+  padding: 70px 100px;
+  border: 0px;
+  background: #F0F1F7;
+}
+
+.page-modal-style .ur-frontend-form input {
+  background: #FFF;
+  padding: 20px;
+  color: #1B003E;
+  margin-bottom: 30px;
+}
+
+.page-modal-style .ur-frontend-form input[type="checkbox"] {
+  margin: 0 10px 0 -29px !important;
+}
+
+.page-modal-style .ur-frontend-form button[type="submit"] {
+  background: #FF3F7D;
+  color: #FFF;
+  padding: 20px;
+  min-width: 370px;
+  text-align: center;
+  display: block;
+  margin: 20px auto;
+  border-radius: 35px;
+  font: 500 18px/28px sofia-pro, sans-serif;
+}
+
+.page-modal-style .ur-frontend-form button[type="submit"]:hover {
+  background: #E0396F;
+}
+
+.page-modal-style .ur-frontend-form label {
+  font: 500 18px/28px sofia-pro, sans-serif;
+  font-weight: 800 !important;
+}
+
+.page-modal-style .ur-frontend-form label[data-label="Checkbox"] {
+  display: none;
+}
+
+.page-modal-style .ur-frontend-form label .ur-checkbox-label {
+  font: 500 14px/22px sofia-pro, sans-serif;
 }
 
 form p {

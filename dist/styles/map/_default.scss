@@ -19,6 +19,34 @@ button{transition: 0.8s; text-decoration: none; color: $dark-color; background-c
     &:hover{  background-color: $dark-color; color: $second-color  }
 }
 
+button.close-btn{
+    color: $second-color;
+    background-color: transparent !important;
+    border: 0px;
+    padding: 0px;
+    &:before{
+        cursor: pointer;
+        display: inline-block;
+        padding: 10px;
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        content: "\2715";
+        color: $second-color;
+        border-radius: 50%;
+        background: $white-color;
+        margin: 0 10px 0 0;
+        
+    }
+    &:hover{
+        &:before{
+            color:$white-color ;
+            background: $second-color;
+
+        }
+    }
+}
+
 ol li::marker{ color: $dark-color; font-weight: 700;}
 ul li::marker{ color: $blue-color; font-weight: 700; }
 

@@ -38,7 +38,7 @@
 			<div class="col-4 text-right">
 				<div class="fix-menu">
 					<?php if( !is_user_logged_in() ){ ?>
-						<a id="login-nav"  class="read-more" href="<?php echo get_the_permalink(430); ?>">Create an account</a>
+						<a id="login-nav"  class="read-more" href="<?php echo get_the_permalink(784); ?>">Create an account</a>
 					<?php }else{ 
 							if( get_field('profile_img', 'user_'.get_current_user_id()  ) ){
 								$profile = 'background-image:url('. get_field('profile_img', 'user_'.get_current_user_id()  ).')';

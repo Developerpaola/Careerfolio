@@ -1,0 +1,54 @@
+.modal-style{
+    background-color: $four-color;
+    padding: 35px 0;
+}
+
+.page-modal-style{
+    padding: 60px 0;
+    &.container{ max-width: 835px; min-height: 500px;}
+    h1{ text-align: center; margin-bottom: 10px;}
+    h3.subtitle{font:$font-normal; text-align: center; margin-bottom: 50px !important;}
+    p{ font: $font-normal;}
+
+    .ur-frontend-form{
+        padding: 70px 100px;
+        border: 0px;
+        background: $four-color;
+        input{
+            background: $white-color;
+            padding: 20px;
+            color: $dark-color;
+            margin-bottom: 30px;
+            &[type="checkbox"]{
+                margin: 0 10px 0 -29px !important;
+            }
+
+        }
+
+        button[type="submit"]{
+            background: $second-color ;
+            color: $white-color;
+            padding: 20px;
+            min-width: 370px;
+            text-align: center;
+            display: block;
+            margin: 20px auto;
+            border-radius: 35px;
+            font: $font-normal;
+            &:hover{
+                background: $third-color;
+            }
+        }
+
+        label{
+            font: $font-normal;
+            font-weight: 800 !important;
+            &[data-label="Checkbox"] {
+                display: none;
+            }
+
+            .ur-checkbox-label{ font: $font-small;}
+        }
+
+    }
+}
