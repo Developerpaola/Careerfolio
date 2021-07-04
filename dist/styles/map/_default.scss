@@ -15,123 +15,10 @@ a{transition: 0.8s; text-decoration: none; color: $second-color; transition: 0.8
     &:hover{  color: $third-color;  }
 }
 
-button{transition: 0.8s; text-decoration: none; color: $dark-color; background-color: $second-color;
-    &:hover{  background-color: $dark-color; color: $second-color  }
-}
 
-button.close-btn{
-    color: $second-color;
-    background-color: transparent !important;
-    border: 0px;
-    padding: 0px;
-    &:before{
-        cursor: pointer;
-        display: inline-block;
-        padding: 10px;
-        width: 45px;
-        height: 45px;
-        text-align: center;
-        content: "\2715";
-        color: $second-color;
-        border-radius: 50%;
-        background: $white-color;
-        margin: 0 10px 0 0;
-        
-    }
-    &:hover{
-        &:before{
-            color:$white-color ;
-            background: $second-color;
-
-        }
-    }
-}
 
 ol li::marker{ color: $dark-color; font-weight: 700;}
 ul li::marker{ color: $blue-color; font-weight: 700; }
-
-/*  BTN */
-.btn-style-roundbox{
-    display: inline-block;
-    padding: 5px 15px;
-    border: 1px solid $second-color;
-    border-radius: 16px;
-    margin: 0;
-    color: $dark-color;
-    font-weight: 700;
-    font-size: 15px; 
-    &:hover{ background-color: $third-color; color: $white-color;}
-}
-
-
-.icon-link{
-    margin-left: 30px;
-    &:hover path{fill: $second-color}
-}
-
-.read-more{
-    display: inline-block; 
-    background-color: $second-color; 
-    color: $white-color; 
-    font: $font-btn; 
-    padding: 10px 30px;
-    text-align: center; 
-    border-radius: 24px;
-
-    &:hover{  color: $white-color ; background-color: $third-color;  }
-}
-
-.next-btn{ 
-    color: $dark-color; 
-    font: $font-normal; 
-    font-weight: 700;
-
-    &:after{
-        content: '>';
-        color: $dark-color;
-        margin-left: 5px;
-    }
-
-    &:hover{
-        color: $dark-color; 
-        &::after{margin-left: 10px;}
-    }
-
-}
-
-.down-btn{ 
-    color: $dark-color; 
-    font: $font-normal; 
-    font-weight: 700;
-
-    &:after{
-        content: '>';
-        color: $dark-color;
-        margin-left: 5px;
-        transform: rotate(90deg);
-        display: inline-block;
-        transition: 0.8s;
-    }
-
-    &:hover,
-    .active &{
-        color: $second-color; 
-        &:after{color: $second-color;  transform: rotate(-90deg);}
-    }
-
-
-}
-
-.disable-btn{
-    pointer-events: none;
-    opacity: 0.7;
-}
-
-.edit-btn{
-    color: $third-color;
-    font:  $font-small;
-}
-
 
 /* Bg */
 .bg-secondary{ background-color: $second-color !important; color: $dark-color;}
@@ -198,4 +85,23 @@ ul li::marker{ color: $blue-color; font-weight: 700; }
 
 .author-box{
     margin-top: -130px;
+    .nav-pills{ border-bottom: 1px solid $four-color;
+        .nav-link{ padding: 0px !important;}
+    }
+    .services-list .pill {
+        width: 100%;
+        padding: 20px;
+    }
+} 
+
+#user-registration{
+    background-color: transparent;
+    box-shadow:none;
+}
+
+.pill{
+    padding: 1px 5px;
+    background-color: $four-color;
+    border-radius: 11px;
+    display: inline-block;
 }

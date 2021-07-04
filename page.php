@@ -11,21 +11,43 @@
  *
  * @package foundry
  */
-
+if( is_user_logged_in() and get_the_ID() == 809){
+    acf_form_head();
+}
 get_header();
 ?>
 
-<main role="main" class="main content-information">
+<main role="main" class="main single-information <?php echo get_field('full_container'); ?>">
     <div class="container">
-       
+        <?php
+            if( get_field('full_container') == 'full-content-information' ){
+                echo '<a class="back-btn" href="javascript:history.go(-1)">Back</a>';
+            }
+        ?>
         <h1><?php the_title(); ?></h1>
-        <p class="subtitle">Last modified <?php echo  get_the_modified_time('F jS, Y'); ?>.</p>
-        <?php 
-                    if ( have_posts() ) : 
-                        while ( have_posts() ) : the_post();
-                            the_content();
-                        endwhile; 
-                    endif; 
+        <?php
+            if( get_field('full_container') == 'full-content-information' ){
+                echo '<p class="subtitle">'.get_field('subtitle').'</p>';
+            }else{
+                echo '<p class="subtitle">Last modified '.get_the_modified_time('F jS, Y').'.</p>';
+            }
+       
+            if ( have_posts() ) : 
+                while ( have_posts() ) : the_post();
+                    the_content();
+
+                    if( is_user_logged_in() and get_the_ID() == 809){
+                        acf_form(array(
+                            'post_id'       => 'user_'.get_current_user_id(),
+                            'field_groups' => array('group_5e98a6b630c66'),
+                            'post_title'    => false,
+                            'post_content'  => false,
+                            'submit_value'  => __('Save')
+                        ));
+                    }
+
+                endwhile; 
+            endif; 
         ?>
     </div>
     

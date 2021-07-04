@@ -14,6 +14,14 @@
         padding: 70px 100px;
         border: 0px;
         background: $four-color;
+        border-radius: 15px;
+        label{clear: both;}
+        select{
+            background: $white-color;
+            padding: 20px;
+            color: $dark-color;
+            margin-bottom: 30px;
+        }
         input{
             background: $white-color;
             padding: 20px;
@@ -22,6 +30,21 @@
             &[type="checkbox"]{
                 margin: 0 10px 0 -29px !important;
             }
+            &[type="submit"]{
+                float: none;
+                background: $second-color ;
+                color: $white-color;
+                padding: 20px;
+                 width: 370px;
+                text-align: center;
+                display: block;
+                margin: 20px auto;
+                border-radius: 35px;
+                font: $font-normal;
+                &:hover{
+                    background: $third-color;
+                }
+            }
 
         }
 
@@ -29,7 +52,7 @@
             background: $second-color ;
             color: $white-color;
             padding: 20px;
-            min-width: 370px;
+            width: 370px;
             text-align: center;
             display: block;
             margin: 20px auto;
@@ -40,15 +63,55 @@
             }
         }
 
+
         label{
             font: $font-normal;
             font-weight: 800 !important;
             &[data-label="Checkbox"] {
                 display: none;
+                font-weight: 300;
             }
 
             .ur-checkbox-label{ font: $font-small;}
         }
 
     }
+
+    
+
+ 
+}
+
+
+/*------Modal------*/
+.modal-box{
+    display: none; 
+    transition: 0.6s; 
+    position: fixed; 
+    z-index: 9999; 
+    background-color: rgba(35, 31, 32, 0.5); 
+    min-height: 100%; 
+    top: 0px; 
+    left: 0;
+    width: 100%; 
+    padding-top: 50px; 
+    min-height: 100vh; 
+    padding-bottom: 50px; 
+    #close-login-modal{position: absolute; top: 10px; right: 10px; cursor: pointer;}
+    .container{
+        max-width: 830px;
+        vertical-align: middle;
+        background-color: $four-color;
+        padding: 40px;
+        border-radius: 5px;
+        position: fixed;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        overflow-y: scroll;
+        height: 80vh;
+    }
+
+    .acf-field{padding: 10px 0 !important;}
+   
 }

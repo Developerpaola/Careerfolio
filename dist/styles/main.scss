@@ -1,8 +1,7 @@
-@import 'map/_variables', 'map/_default'; 
-@import 'map/_header', 'map/_footer';
+@import 'map/_variables', 'map/_default', 'map/_btn'; 
+@import 'map/_header', 'map/_footer','map/form';
 @import 'map/_hero';
 @import 'map/_flag_box';
 @import 'map/_tabs', 'map/slider', 'map/accordion';  
 @import 'map/sidebar', 'map/comments';
-@import 'map/content-page','map/modal-page';
-@import 'map/form','map/profile';
+@import 'map/content-page','map/modal-page' ,'map/profile';

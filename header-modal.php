@@ -27,7 +27,11 @@
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-2">
-				<button id="close-modal" class="close-btn">Cancel</button>
+					<?php if( !is_user_logged_in() ){ ?>
+						<a id="close-modal" href="javascript:void(0);" onclick="goBack()" class="close-btn">Cancel</a>
+					<?php }else{ ?>
+						<a id="close-modal" href="<?php echo get_author_posts_url( get_current_user_id() ); ?>" class="close-btn">Cancel</a>
+					<?php } ?>
 			</div>
 			<div class="col-6">
 				

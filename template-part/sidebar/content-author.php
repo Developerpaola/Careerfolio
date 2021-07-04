@@ -47,7 +47,7 @@ if( get_field('profile_img', 'user_'.$userID ) ){
 
     <!-- My Groups----> 
     <h3>My Groups</h3> 
-    <p><a href="">My Groups</a></p>    
+    <p><a href="<?php echo get_the_permalink(852).'/?information='.$userID; ?>">View groups</a></p>   
 
     
     <h3>Similar Profiles</h3>  

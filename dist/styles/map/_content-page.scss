@@ -18,6 +18,29 @@
 
 }
 
+.full-content-information{
+    margin: auto;
+    width: 100%;
+    .container{
+        padding:55px 0;
+    }
+    .subtitle{text-align: center; margin: 15px 0 57px;}
+    h3{ margin-bottom: 30px;}
+    li{ margin-bottom: 21px;} 
+    li ul,
+    li ol{ margin-top: 20px;}
+
+    
+
+
+}
+
+.hero-img{
+    margin: 0px auto 25px;
+    display: block;
+    border-radius: 10px;
+}
+
 
 blockquote{ 
     padding: 30px;
@@ -82,9 +105,12 @@ blockquote{
 }
 
 .single-information{
+    font:$font-normal; color: $black-color;
+    font-weight: 100;
     h1{ font: $font-h1; margin-bottom: 20px;}
     p{
         font:$font-normal; color: $black-color;
+        font-weight: 100;
         .subtitle{margin:0px; }
     }
     
@@ -93,4 +119,58 @@ blockquote{
         height: 90px;
         display: inline-block;
     }
+
+    .line{max-width: 1000px; border-color: $four-color; margin: 20px auto 40px;}
+
+    .tab-content{padding: 0 ;}
 }
+
+.comments{
+    font: $font-normal;
+    p{font: $font-normal; font-weight:100;
+        &.must-log-in{ border: 1px solid $four-color; padding: 10px;}
+    }
+    ol{ padding: 0px; margin: 0px; }
+    li{list-style: none; padding: 15px; margin: 0px; border:1px solid $four-color;}
+    h3{
+        font: $font-h3;
+        padding: 15px;
+        border:1px solid $four-color;
+        border-bottom: 0px;
+        margin: 15px 0 0 !important;
+
+    }
+    img.avatar {display: none;}
+    footer{ background:transparent; padding: 0px; margin-bottom: 10px;}
+
+    form{
+        border:1px solid $four-color; padding: 15px;
+        textarea{
+            padding: 10px;
+            border: 0px;
+            border-radius: 15px;
+            height: 50px;
+            background: $four-color;
+        }
+        input[type=submit]{
+            width: 200px;
+            margin: 15px  0 0 !important;
+            font: $font-normal;
+        }
+        label[for="comment"]{
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 0 20px 0px 0;
+            background-color: #f2f2f2;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            vertical-align: top;
+            font-size: 0px;
+        } 
+    } 
+   
+
+} 

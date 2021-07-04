@@ -30,8 +30,10 @@ if (is_user_logged_in()) {
 						</div>
 					</div>
 					
-					<a href="<?php echo get_the_permalink( 84 ); ?>">Add Insights</a>
+					<a href="<?php echo get_the_permalink( 84 ); ?>">Add Contribution</a>
+					<a href="<?php echo get_the_permalink( 833 ); ?>" >Add Resource</a>
 					<a href="<?php echo get_the_permalink( 106 ); ?>" >Add Company</a>
+					<a href="<?php echo get_the_permalink( 835 ); ?>" >Add Group</a>
 				</div>
 			</div>
 		</div>

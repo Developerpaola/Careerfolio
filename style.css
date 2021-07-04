@@ -187,33 +187,7 @@ img{ max-width: 100%; height: auto !important; }
 
 
 .user-registration-MyAccount-content header{background-color:#FFFFFF;}
-/*------Modal------*/
-.modal-box{display: none; transition: 0.6s; position: absolute; z-index: 9999; background-color: rgba(35, 31, 32, 0.5); min-height: 100%; top: 0px; width: 100%; padding-top: 50px; min-height: 100vh; padding-bottom: 50px; }
-/*.modal-box .container{max-width: 550px;  vertical-align: middle;  background-color: #fff; padding: 40px; border-radius: 5px; position: relative;}
-*/
-.modal-box .container{
-  max-width: 550px;
-vertical-align: middle;
-background-color: #fff;
-padding: 40px;
-border-radius: 5px;
-position: fixed;
-margin: 0 auto;
-left: 0;
-right: 0;
-overflow-y: scroll;
-height: 445px;
-}
-#close-login-modal{position: absolute; top: 10px; right: 10px; cursor: pointer;}
-.modal-box h3{ }
-.modal-box a{color: #6581D1;}
-.modal-box a:hover{color: #888;}
-.modal-box #user-registration{margin:30px 0 0 !important; }
-.modal-box  .ur-frontend-form.login{border:none; padding: 0px;}
-.modal-box input[type="submit"]{
-    width: 100%;
-    margin: 15px 0 20px;
-}
+
 
 .user-registration-LostPassword{text-align: center;}
 .user-registration-register{text-align: center;}
@@ -263,42 +237,7 @@ height: 445px;
 #info-jobs .post-box{min-height: 303px;}
 
 #info-promotions .post-box{min-height: 320px;}
-/*--------- EDIT Profile------------*/
-.acf-fields > .acf-tab-wrap{ background-color: transparent !important; margin-top: 50px; }
-.acf-tab-group{padding: 0px !important; border-bottom: 2px solid #F7F8FA !important;}
-.acf-tab-group li a{
-	margin-right: 20px;
-    padding: 0px !important;
-    border: none !important;
-    background: transparent !important;
-   
-    margin-bottom: -1px !important;
 
-}
-.acf-fields > .acf-field{border: 0px !important; padding: 25px 10px  0px 0px !important;}
-.acf-tab-group li.active a{ color:#6581D1 !important;  border-bottom: 2px solid #6581D1 !important; }
-
-.select2-container.-acf .select2-selection{border: 0px !important; border-bottom: 1px solid #EDEDED; border-top: 1px solid #EDEDED; border-radius: 0px !important; padding-bottom: 20px; background-color: #F7F8FA;}
-.select2-container.-acf .select2-selection--multiple .select2-selection__choice{ 
-	display: inline-block; 
-	padding: 5px 15px; 
-	border:1px solid #FF7A6A !important; 
-	background-color: transparent !important;
-	 
-	color: #626262 !important; 
-	border-radius: 10px; 
-	margin: 0 10px 15px 0; 
-}
-
-.acf-button{ display: inline-block; padding: 5px 15px; background-color: #fff; margin: 15px 0 0 0; border:1px solid #6581D1;  border-radius: 5px; }
-.acf-button:hover{ background-color: #6581D1;  border:1px solid #6581D1;  }
-
-.ui-sortable .acf-field{padding: 10px !important; border: 0px !important;}
-
-.acf-tooltip{ background-color: #6581D1 !important; }
-
-/*.acf-field.acf-field-repeater.acf-field-5e98abaa0b870 .acf-label{display: none!important;}*/
-#editmyprofile .acf-actions .acf-button.button.button-primary{float: left!important;}
 
 /*-------------Apply job--------------*/
 .apply-job label{margin:15px 0;display: inline-block;}

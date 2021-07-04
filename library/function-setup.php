@@ -380,18 +380,20 @@ function list_jobs_func( ) {
                                              </div>
                                         </a>';
                             }
+                            wp_reset_postdata();
     return $msg;
 }
 
 
-
+//List groups
 add_shortcode( 'list_groups', 'list_groups_func' ); 
-function list_groups_func( ) {
+function list_groups_func( $atts) {
 
     $text = $atts['text'];
     $sort = $atts['sort'];
     $industries = $atts['industries'];
     $location = $atts['location'];
+    $author = $atts['authorinfo'];
   
 
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -410,8 +412,11 @@ function list_groups_func( ) {
     if ($location != "") {  
         $args['meta_query'][] = array('key' => 'location', 'value' => $location, 'compare' => 'LIKE');
     }
+    if ($author != "") {  
+        $args['author'] = $author;
+    }
     $postslist = new WP_Query( $args );
-
+  
 
     if ( $postslist->have_posts() ){
         echo  '<div class="row align-items-start">';
@@ -420,6 +425,61 @@ function list_groups_func( ) {
                                 get_template_part("template-part/community/box","groups");
                             
          endwhile;  
+         wp_reset_postdata();
+         echo '</div>';
+
+             $big = 999999999;
+     echo '<nav class="pagination">'.paginate_links( array(
+          'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+          'format' => '?paged=%#%',
+          'current' => max( 1, get_query_var('paged') ),
+          'total' => $postslist->max_num_pages,
+          'prev_text' => '&laquo;',
+          'next_text' => '&raquo;'
+     ) ).'</nav>';
+
+    }else{
+        echo "<center><h2>Sorry there are no groups matching your selection</h2></center>";
+    }
+                            
+   
+}
+
+// list conversations
+add_shortcode( 'list_conversations', 'list_conversations_func' ); 
+function list_conversations_func( $atts) {
+    
+    $group = $atts['group'];
+    $text = $atts['text'];
+    $sort = $atts['sort'];
+  
+
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $args =  array( 
+                                'orderby' => 'title',
+                                'order' => $sort,  
+                                'post_type'  => 'conversation',
+                                'posts_per_page' => 6,
+                                's' => $text,
+                                'paged' => $paged,
+                                
+                            ) ;
+   
+    if ($group != "") {  
+        //$args['meta_key'] = 'group';
+        //$args['meta_value'] = $group;
+    }
+    $postslist = new WP_Query( $args );
+  
+    
+    if ( $postslist->have_posts() ){
+        echo  '<div class="row align-items-start">';
+        while ( $postslist->have_posts() ) : $postslist->the_post(); 
+
+                                get_template_part("template-part/community/box","conversation");
+                            
+         endwhile;  
+         wp_reset_postdata();
          echo '</div>';
 
              $big = 999999999;
@@ -666,6 +726,65 @@ function list_companies_func($atts) {
 
 }
 
+
+/*-----------List companies--------------*/
+add_shortcode( 'list_post', 'list_post_func' ); 
+function list_post_func($atts) {
+    $text = $atts['text'];
+    $sort = $atts['sort'];
+    $industries = $atts['industries'];
+    $location = $atts['location'];
+    $author = $atts['author'];
+    //$locationname = get_term($location);
+
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $args =  array( 
+                                'orderby' => 'title',
+                                'order' => $sort,  
+                                'post_type'  => 'insights',
+                                'posts_per_page' => 6,
+                                's' => $text,
+                                'paged' => $paged,
+                                
+                            ) ;
+    if ($industries != "") {
+        $args['meta_query'][] = array('key' => 'industries', 'value' => $industries, 'compare' => 'LIKE');
+    }
+    if ($location != "") {  
+        $args['meta_query'][] = array('key' => 'location', 'value' => $location, 'compare' => 'LIKE');
+    }
+    
+    if ($author != "") {  
+        $args['author__in'] = $author;
+    }
+    $postslist = new WP_Query( $args );
+
+    if ( $postslist->have_posts() ){
+        echo  '<div class="row align-items-start">';
+        while ( $postslist->have_posts() ) : $postslist->the_post(); 
+
+                                get_template_part("template-part/community/box","contributions");
+                            
+         endwhile;  
+         echo '</div>';
+
+             $big = 999999999;
+     echo '<nav class="pagination">'.paginate_links( array(
+          'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+          'format' => '?paged=%#%',
+          'current' => max( 1, get_query_var('paged') ),
+          'total' => $postslist->max_num_pages,
+          'prev_text' => '&laquo;',
+          'next_text' => '&raquo;'
+     ) ).'</nav>';
+
+    }else{
+        echo "<center><h2>Sorry there are no contributions matching your selection</h2></center>";
+    }
+                            
+
+}
+
 /*------------list promotions-------------------*/
 add_shortcode( 'list_promotions', 'list_promotions_func' ); 
 function list_promotions_func() {
@@ -865,7 +984,7 @@ function custom_post_type() {
     add_action( 'init', 'custom_post_company_type', 0 );
     
     
-    function custom_post_job_type() {
+    function custom_post_group_type() {
      
     // Set UI labels for Custom Post Type
         $labels = array(
@@ -918,9 +1037,67 @@ function custom_post_type() {
         register_post_type( 'group', $args );
      
     }
+
      
+    add_action( 'init', 'custom_post_group_type', 0 );
+
+
+    function custom_post_conversation_type() {
      
-    add_action( 'init', 'custom_post_job_type', 0 );
+        // Set UI labels for Custom Post Type
+            $labels = array(
+                'name'                => _x( 'Conversation', 'Post Type General Name', 'pilotspider' ),
+                'singular_name'       => _x( 'Conversation', 'Post Type Singular Name', 'pilotspider' ),
+                'menu_name'           => __( 'Conversation', 'pilotspider' ),
+                'parent_item_colon'   => __( 'Parent conversation', 'pilotspider' ),
+                'all_items'           => __( 'All conversation', 'pilotspider' ),
+                'view_item'           => __( 'View conversation', 'pilotspider' ),
+                'add_new_item'        => __( 'Add New conversation', 'pilotspider' ),
+                'add_new'             => __( 'Add New', 'pilotspider' ),
+                'edit_item'           => __( 'Edit conversation', 'pilotspider' ),
+                'update_item'         => __( 'Update conversation', 'pilotspider' ),
+                'search_items'        => __( 'Search conversation', 'pilotspider' ),
+                'not_found'           => __( 'Not Found', 'pilotspider' ),
+                'not_found_in_trash'  => __( 'Not found in Trash', 'pilotspider' ),
+            );
+             
+        // Set other options for Custom Post Type
+             
+            $args = array(
+                'label'               => __( 'conversation', 'pilotspider' ),
+                'description'         => __( 'conversation news and reviews', 'pilotspider' ),
+                'labels'              => $labels,
+                // Features this CPT supports in Post Editor
+                'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+                // You can associate this CPT with a taxonomy or custom taxonomy. 
+                'taxonomies'          => array( 'skills' ),
+                /* A hierarchical CPT is like Pages and can have
+                * Parent and child items. A non-hierarchical CPT
+                * is like Posts.
+                */ 
+                'hierarchical'        => false,
+                'public'              => true,
+                'show_ui'             => true,
+                'show_in_menu'        => true,
+                'show_in_nav_menus'   => true,
+                'show_in_admin_bar'   => true,
+                'menu_position'       => 5,
+                'can_export'          => true,
+                'has_archive'         => true,
+                'exclude_from_search' => false,
+                'publicly_queryable'  => true,
+                'capability_type'     => 'post',
+                'show_in_rest' => true,
+         
+            );
+             
+            // Registering your Custom Post Type
+            register_post_type( 'conversation', $args );
+         
+    }
+    
+         
+    add_action( 'init', 'custom_post_conversation_type', 0 );
     
     
     function custom_post_case_studie_type() {

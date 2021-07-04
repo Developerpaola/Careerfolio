@@ -16,9 +16,13 @@ if( get_field('banner_img', 'user_'.$userID ) ){
 }else{
     $banner = 'background-image:url('.get_site_url().'/wp-content/uploads/2020/04/Evac-complete-cleantech-solution-building.jpg)';
 }
+ $col = "4";
+ if  (is_single() ){
+   $col = "6";
+ }
 ?>
 
-<div class="col-4">
+<div class="col-<?php echo $col; ?>">
             <div class="post-box company_box user-box">
                                         <a href="<?php echo get_author_posts_url($userID ); ?>"><div class="post-box-img" ></div></a>
                                         <div class="table-box" style="<?php echo $banner; ?>">

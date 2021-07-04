@@ -34,3 +34,172 @@ form{
 
 
 #show-results{ padding: 95px 0 56px;}
+
+.acf-form{ 
+    .acf-fields.-sidebar{
+        padding: 0 0 0 35% !important;
+        &:before {
+            background-color: transparent;
+            width: 35%;
+            border: 0px;
+        }
+
+    }
+    
+
+
+    .acf-field{
+        padding: 10px 5% !important;
+        border: 0px;
+        background: $four-color;
+        margin: 0px !important;
+
+        p{
+            font:$font-small;
+            margin-bottom: 15px;
+            font-weight: 100;
+        }
+        &.all-section{
+            padding-top: 70px !important;
+            padding-bottom: 70px !important;
+            margin-bottom: 35px !important;
+            border-radius: 15px 15px;
+        }
+
+        &.first-section,
+        &.acf-field--post-title{
+            padding-top: 70px !important;
+            border-radius: 15px 15px 0 0;
+        }
+        &.last-section{
+            padding-bottom: 70px !important;
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 35px !important;
+        }
+
+        &.hide-label{
+            label{display: none;}
+        }
+        &.hidde-field{
+            .acf-label{display: none;}
+            .acf-input{display: none; pointer-events: none;}
+        }
+        &[data-type="message"]{
+            label{
+                font: $font-h3;
+            }
+            
+        }
+
+        &[data-type="image"]{
+            min-height: 250px !important;
+            img{ max-height: 150px !important; width: auto !important; margin:0 auto;}
+        }
+
+    }
+    label{clear: both;}
+    select{
+        background: $white-color !important;
+        padding: 20px !important;
+        color: $dark-color;
+        margin-bottom: 0px;
+    }
+    input{
+        &[type="text"], 
+        &[type="email"], 
+        &[type="search"], 
+        &[type="password"], 
+        &[type="url"]{
+            background: $white-color !important;
+            padding: 20px !important;
+            color: $dark-color;
+            border: 0px;
+            width: 100%;
+        }
+       
+        &[type="checkbox"]{
+            margin: 0 10px 0 -29px !important;
+        }
+        &[type="submit"]{
+            background: $second-color ;
+            color: $white-color;
+            padding: 20px;
+            max-width: 370px;
+            text-align: center;
+            display: block;
+            margin: 20px auto;
+            border-radius: 35px;
+            font: $font-normal;
+            border:0px;
+            &:hover{
+                background: $third-color;
+            }
+        }
+
+    }
+
+    .acf-table{
+        label{
+            font: $font-small !important;
+            margin-bottom: 10px !important;
+        }
+        .acf-field{
+            padding: 5px !important;
+        }
+        input[type="text"], 
+        input[type="email"], 
+        input[type="search"],
+        input[type="password"]{
+            padding: 10px !important;
+        }
+    }
+
+
+    .acf-fields.-sidebar{
+        label{
+            font: $font-h3;
+            color: $dark-color;
+            margin-bottom: 20px;
+        }
+
+
+        .acf-tab-wrap.-left{
+            .acf-tab-group {
+                width: 35% !important;
+                li{
+                    a{
+                        background-color: $four-color;
+                        color: $black-color;
+                        font: $font-normal;
+                        padding: 18px 20px;
+                        width: 90%;
+                        margin-bottom: 10px;
+                        border: none;
+                        border-radius: 15px;
+                        &:hover{
+                            background-color: $black-color;
+                            color: $four-color;
+        
+                        }
+                    }
+        
+                    &.active a{
+                        background-color: $black-color;
+                        color: $four-color;
+                    }
+                }
+        
+                
+            } 
+    
+    
+        } 
+
+    }
+    
+}
+
+.select2-container.-acf .select2-selection{
+    border: 0px;
+    padding: 0px;
+}
