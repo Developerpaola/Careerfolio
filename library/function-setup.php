@@ -726,8 +726,7 @@ function list_companies_func($atts) {
 
 }
 
-
-/*-----------List companies--------------*/
+/*-----------List post--------------*/
 add_shortcode( 'list_post', 'list_post_func' ); 
 function list_post_func($atts) {
     $text = $atts['text'];
@@ -756,6 +755,69 @@ function list_post_func($atts) {
     
     if ($author != "") {  
         $args['author__in'] = $author;
+    }
+    $postslist = new WP_Query( $args );
+
+    if ( $postslist->have_posts() ){
+        echo  '<div class="row align-items-start">';
+        while ( $postslist->have_posts() ) : $postslist->the_post(); 
+
+                                get_template_part("template-part/community/box","contributions");
+                            
+         endwhile;  
+         echo '</div>';
+
+             $big = 999999999;
+     echo '<nav class="pagination">'.paginate_links( array(
+          'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+          'format' => '?paged=%#%',
+          'current' => max( 1, get_query_var('paged') ),
+          'total' => $postslist->max_num_pages,
+          'prev_text' => '&laquo;',
+          'next_text' => '&raquo;'
+     ) ).'</nav>';
+
+    }else{
+        echo "<center><h2>Sorry there are no contributions matching your selection</h2></center>";
+    }
+                            
+
+}
+
+/*-----------List case studies--------------*/
+add_shortcode( 'list_case', 'list_case_func' ); 
+function list_case_func($atts) {
+    $text = $atts['text'];
+    $sort = $atts['sort'];
+    $industries = $atts['industries'];
+    $location = $atts['location'];
+    $author = $atts['author'];
+    $company = $atts['company'];
+    //$locationname = get_term($location);
+
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $args =  array( 
+                                'orderby' => 'date',
+                                'order' => $sort,  
+                                'post_type'  => 'case_studies',
+                                'posts_per_page' => 6,
+                                's' => $text,
+                                'paged' => $paged,
+                                
+                            ) ;
+    if ($industries != "") {
+        $args['meta_query'][] = array('key' => 'industries', 'value' => $industries, 'compare' => 'LIKE');
+    }
+    if ($location != "") {  
+        $args['meta_query'][] = array('key' => 'location', 'value' => $location, 'compare' => 'LIKE');
+    }
+    
+    if ($author != "") {  
+        $args['author__in'] = $author;
+    }
+    if ($company != "") {  
+        $args['meta_key'] = 'company';
+        $args['meta_value'] = $company;
     }
     $postslist = new WP_Query( $args );
 

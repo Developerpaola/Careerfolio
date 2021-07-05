@@ -8,7 +8,7 @@ if(get_field('hero_image')){
 
 
 $col = "3";
-if  (is_author() ){
+if  (is_author() or is_single() ){
   $col = "4";
 
 }

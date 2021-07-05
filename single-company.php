@@ -88,7 +88,7 @@ if( get_field('hero_image' ) ){
 							</div>							
 						</div>
 						<div class="tab-pane fade" id="pills-studies" role="tabpanel" aria-labelledby="pills-studies-tab">
-							
+							<?php echo do_shortcode('[list_case company="'.get_the_ID().'"]'); ?>
 						</div>
 						<div class="tab-pane fade" id="pills-resources" role="tabpanel" aria-labelledby="pills-resources-tab">...</div>
 						<div class="tab-pane fade" id="pills-about" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -101,6 +101,23 @@ if( get_field('hero_image' ) ){
 										endwhile; 
 									endif; 
 								?>
+								<?php 
+										if( get_current_user_id() ==  $author_id ){
+											echo '<a href="javascript:void(0);" class="edit-btn  openModal" modal="update-about">Edit</a>';
+											echo '<div id="update-about" class="modal-box">
+													<div class="container">
+													<span id="close-login-modal" class="openModal" modal="update-about" >x</span>';
+														acf_form(array(
+															'post_id'		=> get_the_ID(),
+															'post_title'	=> false,
+															'post_content'	=> true,
+															'fields' => array('field_60ddcef4ed4f3'  ),
+															'submit_value' => 'Edit About' 
+														));
+											echo '</div>
+												</div>';
+										}
+									?>
 							</div>
 						</div>
 					</div>

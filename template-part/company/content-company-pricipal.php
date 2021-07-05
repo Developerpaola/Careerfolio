@@ -54,7 +54,7 @@
 							</div>
 							<div class="col text-right">
 								<!-- Estar Btn--->
-								<?php get_template_part("template-part/community/box","connect-message-btns"); ?>
+								<?php get_template_part("template-part/community/box","connect-company-btns"); ?>
 								<!-- End BTN--->
 							</div>
 						</div>

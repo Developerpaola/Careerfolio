@@ -86,7 +86,7 @@ ul li::marker{ color: $blue-color; font-weight: 700; }
 .author-box{
     margin-top: -130px;
     .nav-pills{ border-bottom: 1px solid $four-color;
-        .nav-link{ padding: 0px !important;}
+        .nav-link{ margin: 0px 20px 0 0 !important;}
     }
     .services-list .pill {
         width: 100%;

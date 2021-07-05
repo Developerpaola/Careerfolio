@@ -28,6 +28,15 @@ $( document ).ready(function() {
         }
     });
 
+    $( ".open-addon" ).click(function() {
+        var idBox = $( this ).attr( "id-attr" );
+        if($( "#"+idBox ).hasClass('active')){
+                $( "#"+idBox ).removeClass('active');
+        }else{
+                $( "#"+idBox ).addClass('active');
+        }
+     });
+
 
     $( ".open-tab" ).click(function() {   
         let tab = $( this ).attr('tab');

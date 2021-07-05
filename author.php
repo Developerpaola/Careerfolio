@@ -174,14 +174,7 @@ if( get_field('banner_img', 'user_'.$userauthor->ID ) ){
 
 		});
 
-		$( ".open-addon" ).click(function() {
-		   var idBox = $( this ).attr( "id-attr" );
-		   if($( "#"+idBox ).hasClass('active')){
-		   		$( "#"+idBox ).removeClass('active');
-		   }else{
-		   		$( "#"+idBox ).addClass('active');
-		   }
-		});
+
 	
 </script>
 

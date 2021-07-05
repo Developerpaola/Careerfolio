@@ -31,6 +31,8 @@ get_header("modal"); ?>
                     get_template_part("template-part/post/content","edit-conversation"); 
                 }else if(is_user_logged_in() and get_the_ID() == 874){
                     get_template_part("template-part/company/content","edit-company"); 
+                }else if(is_user_logged_in() and get_the_ID() == 882){
+                    get_template_part("template-part/post/content","edit-case"); 
                 }else{
                     
             ?>

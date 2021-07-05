@@ -123,51 +123,6 @@ if (!current_user_can('administrator') && !is_admin()) {
 }
 
 
-function my_acf_redirect_after_save( $post_id ) {
-    
-    // Only do it for "custom_post" post type
-    if( get_post_type($post_id) != 'case_studies' and   get_post_type($post_id) != 'jobs' and get_post_type($post_id) != 'promotions' and get_post_type($post_id) != 'events'){
-        return;
-    }else{
-        if( isset( $_GET['post']) ){
-            return;
-        }else{
-             update_field('company', $_GET['c'], $post_id );
-
-        }
-    }
-
-
-    
-    
-    // Only do it on the front end
-    if( is_admin() ){
-        return;
-    }
-
-    if(  get_post_type($post_id) == 'case_studies' ){
-        wp_redirect( get_the_permalink( 174 ).'/?post=' . $post_id );
-        die();
-
-    }else if( get_post_type($post_id) == 'jobs' ){
-        wp_redirect( get_the_permalink( 218 ).'/?post=' . $post_id );
-        die();
-
-    }else if( get_post_type($post_id) == 'promotions' ){
-        wp_redirect( get_the_permalink( 250).'/?post=' . $post_id );
-        die();
-
-    }else if(get_post_type($post_id) == 'events'){
-         wp_redirect( get_the_permalink( 514).'/?post=' . $post_id );
-        die();
-    }
-    
-
-}
-
-// run after ACF saves the $_POST['acf'] data
-add_action('acf/save_post', 'my_acf_redirect_after_save', 99);
-
 
 
 
